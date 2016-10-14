@@ -2,6 +2,8 @@ FROM alpine:latest
 
 MAINTAINER K.Kato
 
+ENV LANG=C.UTF-8
+
 RUN apk add --update --no-cache --virtual=build-deps \
     boost-dev g++ make \
     && wget -q http://lotus.kuee.kyoto-u.ac.jp/nl-resource/jumanpp/jumanpp-1.01.tar.xz \
