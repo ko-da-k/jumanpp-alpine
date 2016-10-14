@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-MAINTAINER Kodai Kato
+MAINTAINER K.Kato
 
 RUN apk add --update --no-cache --virtual=build-deps \
     alpine-sdk xz \
