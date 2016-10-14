@@ -3,8 +3,7 @@ FROM alpine:latest
 MAINTAINER K.Kato
 
 RUN apk add --update --no-cache --virtual=build-deps \
-    alpine-sdk xz \
-    && apk add --update --no-cache boost-dev \
+    boost-dev g++ make \
     && wget -q http://lotus.kuee.kyoto-u.ac.jp/nl-resource/jumanpp/jumanpp-1.01.tar.xz \
     && tar Jxfv jumanpp-1.01.tar.xz \
     && cd jumanpp-1.01/ \
@@ -13,6 +12,8 @@ RUN apk add --update --no-cache --virtual=build-deps \
     && make install \
     && cd .. \
     && rm jumanpp-1.01.tar.xz \
-    && apk del build-deps
+    && rm -rf /var/cache/* \
+    && apk del build-deps \
+    && apk add --update --no-cache boost 
 
 CMD ["jumanpp"]
