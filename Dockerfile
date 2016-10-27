@@ -15,6 +15,7 @@ RUN apk add --update --no-cache --virtual=build-deps \
     && make clean \
     && cd .. \
     && rm jumanpp-1.01.tar.xz \
+    && rm -rf jumanpp-1.01 \
     && rm -rf /var/cache/* \
     && apk del build-deps \
     && apk add --update --no-cache boost 
