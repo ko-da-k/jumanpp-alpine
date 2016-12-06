@@ -3,7 +3,7 @@ FROM alpine:latest
 MAINTAINER K.Kato
 
 ENV LANG=C.UTF-8 \
-    JUMANPP_VERSION 1.01
+    JUMANPP_VERSION=1.01
 
 RUN apk add --update --no-cache --virtual=build-deps \
     boost-dev g++ make \
